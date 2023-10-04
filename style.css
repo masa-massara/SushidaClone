@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Zen+Antique&display=swap");
+
+* {
+    /* 画面サイズの対応をしやすく */
+    box-sizing: border-box;
+}
+
+
+body {
+    /* 1vhは、ブラウザの表示領域の高さの1％に相当 */
+    height: 100vh;
+
+    /* 画面の真ん中に持ってくる */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 画面のスクロールをできなくする */
+    overflow: hidden;
+
+    /* 背景のグラデーションを作成(色は#fffを選択してから後付け) */
+    background: linear-gradient(to left top, #abe075, #72b5e5);
+
+    /* フォント */
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    background-color: #72b5e5;
+
+    /* remはhtml要素のフォントサイズをもとに設定する単位 */
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding: 4rem;
+
+    /* 丸みを帯びさせる */
+    border-radius: 0.5rem;
+
+    width: 1000px;
+
+    /* 最短の縦幅を指定 */
+    min-height: 300px;
+
+    /* 最大の横幅を指定 */
+    max-width: 90%;
+
+    /* box-shadow: 左右の向きpx  上下の向きpx ぼかしpx 広がりpx 色 内側指定; */
+    box-shadow: 5px 5px 10px #2a2828;
+}
+
+.container .type-Input {
+    margin: 4rem;
+    font-size: 3rem;
+}
+
+.timer{
+    position: absolute;
+    top: -1rem;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #dd4444;
+}
+
+.type-display{
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+}
+
+.type-Input{
+    /* 背景色を透明に */
+    background: transparent;
+
+    border: 2px solid;
+
+    /* テキストエリアにカーソル当てたときに出る枠線を消す */
+    outline: none;
+
+    width: 90%;
+    height: 14rem;
+
+    /* 上下左右の余白を均等にする */
+    margin: auto;
+
+    /* テキストエリアの大きさを変更できないように */
+    resize: none;
+
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.type-Input:focus{
+    border-color: black;
+}
+
