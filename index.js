@@ -11,26 +11,25 @@ function GetRandomSentence() {
     .then((data) => data.content);
 }
 
-//DOM操作のところを自分で実践
+//DOM操作(自分で実践)
 //spanタグの中に文字を入れるところはできた
 function addSpan(sentence) {
-  const span = document.createElement("span");
-  console.log(span);
-  splitChar(sentence);
-  span.innerText = sentence;
+  splitChar(sentence).forEach((element) => {
+    const span = document.createElement("span");
+    span.innerText = element;
+    typeDisplay.appendChild(span);
+    span.classList.add("correct");
+  });
 }
 
-//文字を分割するとこを自分で実践
+//文字を分割(自分で実践)
 function splitChar(sentence) {
   //スプレッド構文で文字の分割はできた
   //これを一文字ずつspanタグの中に入れられない
   const dividedChar = [...sentence];
   console.log(dividedChar);
-  dividedChar.forEach(element => {
-    const span = document.createElement("span");
-    span.innerText = element;
-    console.log(span);
-  });
+
+  return dividedChar;
 }
 
 // ランダムな文章を取得して表示する
@@ -40,6 +39,9 @@ async function RenderNextSentence() {
 
   typeDisplay.innerText = sentence;
   addSpan(sentence);
+
+  // タグにクラスを付与
+  
 }
 
 RenderNextSentence();
